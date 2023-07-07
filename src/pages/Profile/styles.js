@@ -25,9 +25,8 @@ export const Container = styled.div`
     }
 
     > #signOut {
-      //position: absolute;
-
       margin: auto 90%;
+      position: relative;
     }
   }
 `
