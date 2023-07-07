@@ -59,7 +59,8 @@ function AuthProvider({ children }) {
 
     } catch (error) {
       if(error.response) {
-      alert(error.response.data.message)
+      alert(`${error.response.data.message} "auth.jsx62"`)
+      
       } else {
         alert("Não foi possivel atualizar o perfil.")
       }

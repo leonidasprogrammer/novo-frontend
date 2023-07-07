@@ -1,3 +1,7 @@
+import { RiShutDownLine } from 'react-icons/ri';
+
+
+
 import { useState } from 'react';
 import { FiArrowLeft, FiUser, FiMail, FiLock, FiCamera } from 'react-icons/fi';
 import { useNavigate } from 'react-router-dom'
@@ -15,10 +19,12 @@ import { ButtonText } from '../../components/ButtonText'
 
 import { Container, Form, Avatar } from "./styles";
 
-export function Profile() {
-const { user, updateProfile } = useAuth()
 
-const [name, setName] = useState(user.name);
+
+export function Profile() {
+  const { user, updateProfile } = useAuth()
+  
+  const [name, setName] = useState(user.name);
 const [email, setEmail] = useState(user.email);
 const [passwordOld, setPasswordOld] = useState();
 const [passwordNew, setPasswordNew] = useState();
@@ -28,8 +34,13 @@ const avatarUrl = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` :
 const [avatar, setAvatar] = useState(avatarUrl)
 const [avatarFile, setAvatarFile] = useState(null)
 
+const { signOut } = useAuth()
 const navigate = useNavigate();
 
+function handleSignOut() {
+  navigate("/")
+  signOut()
+}
 function handleBack(){
   navigate(-1)
 }
@@ -64,9 +75,13 @@ function handleChangeAvatar(event) {
     <header>
       <button type="button" onClick={handleBack}>
         <FiArrowLeft size={24} />
-
       </button>
-      
+        
+          <button id="signOut" type="button" onClick={handleSignOut}>
+         <RiShutDownLine/>
+        </button>
+        
+
     </header>
 
     <Form>
@@ -121,8 +136,8 @@ function handleChangeAvatar(event) {
       <Button title="Salvar" onClick={handleUpdate}/>
 
     </Form>
-
-
+     
+   
   </Container>
   );
 }

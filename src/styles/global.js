@@ -27,6 +27,7 @@ a {
 button, a {
 cursor: Pointer;
 transition: filter 0.2s;
+
 }
 
 button:hover, a:hover {

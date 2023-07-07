@@ -5,7 +5,7 @@ export const Container = styled.div`
 
   > header {
     width: 100%;
-    height: 144px;
+    height: 100px;
 
     background: ${({ theme }) => theme.COLORS.BACKGROUND_900};
 
@@ -23,12 +23,18 @@ export const Container = styled.div`
       background: none;
       border: none;
     }
+
+    > #signOut {
+      //position: absolute;
+
+      margin: auto 90%;
+    }
   }
 `
 
 export const Form = styled.form`
   max-width: 340px;
-  margin: 500px auto 0;
+  margin: 150px auto 0;
 
   > div:nth-child(4) {
     margin-top: 24px;

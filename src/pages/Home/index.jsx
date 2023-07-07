@@ -77,6 +77,35 @@ fetchNotes();
   isActive={tagsSelected.length === 0}
   />
   </li>
+  <li>
+  <ButtonText 
+  title="Segunda" 
+  onClick={() => handleTagSelected("")}
+  isActive={tagsSelected.length === 0}
+  />
+  </li>
+  <li>
+  <ButtonText 
+  title="Terceira" 
+  onClick={() => handleTagSelected("")}
+  isActive={tagsSelected.length === 0}
+  />
+  </li>
+  <li>
+  <ButtonText 
+  title="Quarta" 
+  onClick={() => handleTagSelected("")}
+  isActive={tagsSelected.length === 0}
+  />
+  </li>
+  <li>
+  <ButtonText 
+  title="Quinta" 
+  onClick={() => handleTagSelected("")}
+  isActive={tagsSelected.length === 0}
+  />
+  </li>
+
   {
     tags && tags.map(tag => (
       <li key={String(tag.id)}>

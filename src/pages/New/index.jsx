@@ -61,16 +61,16 @@ const [description, setDescription] = useState("")
   return alert("Add a tag")
  }
 
-
-    await api.post("/notes", {
-      title,
-      description,
-      tags,
-      links
-    })
-
-    alert("Nota criada com sucesso!")
-    navigate(-1)
+ 
+ await api.post("/notes", {
+   title,
+   description,
+   tags,
+   links
+  })
+  
+  alert("Nota criada com sucesso!")
+  navigate(-1)
    }
 
 
@@ -140,18 +140,7 @@ const [description, setDescription] = useState("")
            />
         </div>
       </Section>
-      <Section title="Marcadores">
-        <div className="tags">
-          <NoteItem value="react" />
-          <NoteItem isNew placeholder= "Nova tag" />
-        </div>
-      </Section>
-      <Section title="Marcadores">
-        <div className="tags">
-          <NoteItem value="react" />
-          <NoteItem isNew placeholder= "Nova tag" />
-        </div>
-      </Section>
+      
 
 
       <Button 
@@ -164,3 +153,16 @@ const [description, setDescription] = useState("")
     </Container>
   );
 }
+
+/*<Section title="Marcadores">
+        <div className="tags">
+          <NoteItem value="react" />
+          <NoteItem isNew placeholder= "Nova tag" />
+        </div>
+      </Section>
+      <Section title="Marcadores">
+        <div className="tags">
+          <NoteItem value="react" />
+          <NoteItem isNew placeholder= "Nova tag" />
+        </div>
+      </Section>*/

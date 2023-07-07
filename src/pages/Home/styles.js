@@ -51,12 +51,12 @@ export const Menu = styled.ul`
 export const Search = styled.div`
   grid-area: search;
   padding: 64px 64px 0;
-  background: violet;
+  //background: violet;
 `
 
 export const Content = styled.div`
   grid-area: content;
-  background: blue;
+  // background: blue;
   padding: 0 64px;
   overflow-y: auto;
 `
