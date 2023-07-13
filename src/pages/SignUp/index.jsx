@@ -21,14 +21,17 @@ function handleSignUp() {
   if (!name || !email || !password) {
    return alert("Preencha todos os campos!")
   }
-
-  api.post("/users", { name, email, password})
+  
+  api.post("/user", { name, email, password})
   .then(() => {
     alert("Usuário cadastrado com sucesso!");
     navigate("/");
   })
+  
   .catch(error => {
+    
 if(error.response) {
+
   alert(error.response.data.message);
 } else {
   alert("Não foi possível cadastrar")

@@ -12,15 +12,16 @@ function AuthProvider({ children }) {
     try {
       
       console.log("estou aqui")
-      const response =  await api.post("/sessions", { email, password})
+      const response =  await api.post("/sessions", { email, password });
+      
       const { user, token } = response.data;
-
+      
       console.log(user, token)
 
       localStorage.setItem("@rocketnotes:user", JSON.stringify(user))
       localStorage.setItem("@rocketnotes:token", token)
 
-      api.defaults.headers.common['Authorization'] = `Bearer ${token}`
+      api.defaults.headersAuthorization = `Bearer ${token}`
 
       setData({ user, token})
     } catch (error) {
@@ -47,11 +48,11 @@ function AuthProvider({ children }) {
       const fileUploadForm = new FormData();
       fileUploadForm.append("avatar", avatarFile);
 
-      const response = await api.patch("/users/avatar", fileUploadForm)
+      const response = await api.patch("/user/avatar", fileUploadForm)
       user.avatar = response.data.avatar;
     }
 
-      await api.put("/users", user)
+      await api.put("/user", user)
       localStorage.setItem("@rocktnotes:user", JSON.stringify(user))
 
       setData({ user, token: data.token})

@@ -1,7 +1,7 @@
 import { RiShutDownLine } from 'react-icons/ri';
 import { useAuth } from '../../hooks/auth';
 
-import avatarPlaceholder from '../../assets/background.png.png'
+import avatarPlaceholder from '../../assets/profile rocketnotes.png'
 
 import { api } from '../../services/api'
 import { Container, Profile, Logout } from "./styles";
@@ -18,9 +18,9 @@ function handleSignOut() {
   signOut()
 }
 
-
-
 const avatarUrl = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` : avatarPlaceholder;
+
+
 
   return (
     <Container>

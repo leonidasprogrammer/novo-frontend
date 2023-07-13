@@ -25,7 +25,7 @@ export  function Details() {
 
     if (confirm) {
       await api.delete(`/notes/${params.id}`);
-      navigate(-1)
+      navigate("/")
     }
   }
 

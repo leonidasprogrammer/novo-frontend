@@ -79,32 +79,26 @@ fetchNotes();
   </li>
   <li>
   <ButtonText 
-  title="Segunda" 
+  title="Frontend" 
   onClick={() => handleTagSelected("")}
-  isActive={tagsSelected.length === 0}
+  isActive={tagsSelected.length === 1}
   />
   </li>
   <li>
   <ButtonText 
-  title="Terceira" 
+  title="Node" 
   onClick={() => handleTagSelected("")}
-  isActive={tagsSelected.length === 0}
+  isActive={tagsSelected.length === 2}
   />
   </li>
   <li>
   <ButtonText 
-  title="Quarta" 
+  title="React" 
   onClick={() => handleTagSelected("")}
-  isActive={tagsSelected.length === 0}
+  isActive={tagsSelected.length === 3}
   />
   </li>
-  <li>
-  <ButtonText 
-  title="Quinta" 
-  onClick={() => handleTagSelected("")}
-  isActive={tagsSelected.length === 0}
-  />
-  </li>
+ 
 
   {
     tags && tags.map(tag => (

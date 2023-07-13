@@ -12,11 +12,9 @@ export const Container = styled.div`
     display: flex;
     align-items: center;
 
-    padding: 0 124px;
-
     svg {
       color: ${({ theme }) => theme.COLORS.GRAY_100};
-      font-size: 24px;
+      font-size: 36px;
     }
 
     button {
@@ -24,8 +22,13 @@ export const Container = styled.div`
       border: none;
     }
 
+    .handleBack {
+      margin: auto 0vw auto 10vw;
+      position: absolute;
+    }
     > #signOut {
-      margin: auto 90%;
+      float: right;
+      margin: 0 100% 0 83vw;
       position: relative;
     }
   }
@@ -33,7 +36,7 @@ export const Container = styled.div`
 
 export const Form = styled.form`
   max-width: 340px;
-  margin: 150px auto 0;
+  margin: 100px auto 0;
 
   > div:nth-child(4) {
     margin-top: 24px;

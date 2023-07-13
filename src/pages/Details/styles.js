@@ -12,7 +12,7 @@ export const Container = styled.div`
 
   > main {
     grid-area: content;
-    overflow-y: scroll;
+    overflow-y: auto;
     padding: 64px 0;
   }
 `
@@ -38,6 +38,7 @@ export const Content = styled.div`
 
   > button:first-child {
     align-self: end;
+    color: ${({ theme }) => theme.COLORS.ORANGE};
   }
 
   > h1 {

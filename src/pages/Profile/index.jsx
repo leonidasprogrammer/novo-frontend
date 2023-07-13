@@ -10,7 +10,7 @@ import { useAuth } from '../../hooks/auth';
 
 
 import { api } from '../../services/api'
-import avatarPlaceholder from '../../assets/background.png.png'
+import avatarPlaceholder from '../../assets/profile rocketnotes.png'
 import { Input } from '../../components/Input'
 import { Button } from '../../components/Button'
 import { ButtonText } from '../../components/ButtonText'
@@ -31,7 +31,7 @@ const [passwordNew, setPasswordNew] = useState();
 
 const avatarUrl = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` :avatarPlaceholder;
 
-const [avatar, setAvatar] = useState(avatarUrl)
+const [avatar, setAvatar] = useState(avatarUrl) /*(user.avatar)*/
 const [avatarFile, setAvatarFile] = useState(null)
 
 const { signOut } = useAuth()
@@ -46,18 +46,30 @@ function handleBack(){
 }
 
 
+
 async function handleUpdate() {
+
   const updated ={
     name,
     email,
     password: passwordNew,
     old_password: passwordOld,
-  }
 
+   
+  }
+  
+  if (!name || !email || !passwordNew || !passwordOld) {
+    return alert("Preencha todos os campos!")
+   }
+ 
+ 
+  
   const userUpdated = Object.assign( user, updated);
   //return console.log(userUpdated)
 
   await updateProfile({ user: userUpdated, avatarFile })
+
+  handleBack()
 }
 
 function handleChangeAvatar(event) {
@@ -73,8 +85,8 @@ function handleChangeAvatar(event) {
 
   <Container>
     <header>
-      <button type="button" onClick={handleBack}>
-        <FiArrowLeft size={24} />
+      <button class="handleBack" type="button" onClick={handleBack}>
+        <FiArrowLeft size={36} />
       </button>
         
           <button id="signOut" type="button" onClick={handleSignOut}>
