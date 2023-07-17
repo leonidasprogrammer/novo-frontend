@@ -11,17 +11,18 @@ function AuthProvider({ children }) {
     
     try {
       
-      console.log("estou aqui")
       const response =  await api.post("/sessions", { email, password });
       
+      console.log("estou aqui")
       const { user, token } = response.data;
       
       console.log(user, token)
-
+      
       localStorage.setItem("@rocketnotes:user", JSON.stringify(user))
       localStorage.setItem("@rocketnotes:token", token)
 
-      api.defaults.headersAuthorization = `Bearer ${token}`
+      //api.defaults.headersAuthorization = `Bearer ${token}`
+      api.defaults.headers.common['Authorization'] = `Bearer ${token}`
 
       setData({ user, token})
     } catch (error) {
@@ -44,19 +45,21 @@ function AuthProvider({ children }) {
   async function updateProfile({ user, avatarFile }){
     try {
 
-    if(avatarFile){
-      const fileUploadForm = new FormData();
-      fileUploadForm.append("avatar", avatarFile);
-
-      const response = await api.patch("/user/avatar", fileUploadForm)
+      if(avatarFile){
+        const fileUploadForm = new FormData();
+        fileUploadForm.append("avatar", avatarFile);
+        
+        console.log('ava')
+        const response = await api.patch("/users/avatar", fileUploadForm)
       user.avatar = response.data.avatar;
     }
 
-      await api.put("/user", user)
+      await api.put("/users", user)
       localStorage.setItem("@rocktnotes:user", JSON.stringify(user))
 
       setData({ user, token: data.token})
       alert("Perfil atualizado")
+
 
     } catch (error) {
       if(error.response) {

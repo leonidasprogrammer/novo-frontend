@@ -58,9 +58,9 @@ async function handleUpdate() {
    
   }
   
-  if (!name || !email || !passwordNew || !passwordOld) {
+  /*if (!name || !email || !passwordNew || !passwordOld) {
     return alert("Preencha todos os campos!")
-   }
+   } */
  
  
   
@@ -69,7 +69,7 @@ async function handleUpdate() {
 
   await updateProfile({ user: userUpdated, avatarFile })
 
-  handleBack()
+  //handleBack()
 }
 
 function handleChangeAvatar(event) {

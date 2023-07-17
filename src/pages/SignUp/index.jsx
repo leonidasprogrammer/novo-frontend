@@ -22,7 +22,7 @@ function handleSignUp() {
    return alert("Preencha todos os campos!")
   }
   
-  api.post("/user", { name, email, password})
+  api.post("/users", { name, email, password})
   .then(() => {
     alert("Usuário cadastrado com sucesso!");
     navigate("/");
