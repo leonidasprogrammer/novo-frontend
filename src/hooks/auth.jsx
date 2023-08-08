@@ -21,7 +21,7 @@ function AuthProvider({ children }) {
       localStorage.setItem("@rocketnotes:user", JSON.stringify(user))
       localStorage.setItem("@rocketnotes:token", token)
 
-      //api.defaults.headersAuthorization = `Bearer ${token}`
+      //api.defaults.headers.Authorization = `Bearer ${token}`
       api.defaults.headers.common['Authorization'] = `Bearer ${token}`
 
       setData({ user, token})
@@ -48,6 +48,7 @@ function AuthProvider({ children }) {
       if(avatarFile){
         const fileUploadForm = new FormData();
         fileUploadForm.append("avatar", avatarFile);
+        
         
         console.log('ava')
         const response = await api.patch("/users/avatar", fileUploadForm)
