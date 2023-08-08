@@ -27,7 +27,7 @@ function AuthProvider({ children }) {
       setData({ user, token})
     } catch (error) {
       if(error.response) {
-      alert(`${error.response.data.message} Funcioona homi`)
+      alert(`${error.response.data.message} `)
       
       } else {
         alert("Não foi possivel entrar.")
@@ -64,7 +64,7 @@ function AuthProvider({ children }) {
 
     } catch (error) {
       if(error.response) {
-      alert(`${error.response.data.message} "auth.jsx62"`)
+      alert(`${error.response.data.message} `)
       
       } else {
         alert("Não foi possivel atualizar o perfil.")
